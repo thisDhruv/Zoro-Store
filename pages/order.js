@@ -1,9 +1,13 @@
 import Order from '@/models/Order';
 import mongoose from 'mongoose';
+import Error from 'next/error';
 import { useRouter } from 'next/router';
 import React from 'react'
 
-const order = (props) => {
+const OrderPage = (props) => {
+  if(props.order==null){
+    return <Error statusCode={404} />
+  }
     const cart = props.order.products;
     const subtotal = props.order.amount;
   return (
@@ -21,14 +25,14 @@ const order = (props) => {
             <hr className='border-2 mb-1 bg-black'/>
             {
                 Object.keys(cart).map((key)=>{
-                    return <><div className='w-full flex fle-col'>
+                    return <div key={key}><div className='w-full flex fle-col'>
                       <div className='w-9 h-full mx-1'><img src={cart[key].img} alt="productImage" /></div>
                     <div className='w-2/5 overflow-ellipsis overflow-hidden'>{cart[key].name}</div>
                     <div className='w-1/5 text-right'>{cart[key].qty}</div>
                     <div className='w-2/5 text-right'><span className='font-semibold'>₹{cart[key].unitTotal}</span> <span className='text-xs'>({cart[key].price} x {cart[key].qty})</span></div>
                 </div>
                 <hr className='border-1 mb-1 bg-black'/>
-                </>
+                </div>
                 })
             }
               <h1 className="text-right mt-4 text-xl font-semibold leading-none tracking-tight text-gray-900 md:text-xl lg:text-xl dark:text-white">
@@ -36,7 +40,7 @@ const order = (props) => {
               </h1>
               <button
                 type="button"
-                class="right-0 mt-1 text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="right-0 mt-1 text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 
                 Track Order
@@ -62,4 +66,4 @@ export async function getServerSideProps(context){
   };
 }
 
-export default order
+export default OrderPage

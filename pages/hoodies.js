@@ -4,7 +4,7 @@ import mongoose, { connect } from "mongoose";
 import {BsCircleFill} from 'react-icons/bs'
 import { useRouter } from 'next/router';
 
-const hoodies = (props) => {
+const Hoodies = (props) => {
   const products = props.products;
   const router = useRouter();
   const[filterMode,setFilterMode] = useState(false);
@@ -86,7 +86,7 @@ const hoodies = (props) => {
         {
           products && products.length!=0 && products.map((product)=>{
             return (
-              <Link href={"/product/"+product.slug}>
+              <Link href={"/product/"+product.slug} key={product.slug}>
               <div className="relative max-w-[264px] min-w-[180px] bg-white shadow-md rounded-3xl p-2 mx-1 my-3 cursor-pointer">
                   <div className="overflow-x-hidden rounded-2xl">
           
@@ -107,9 +107,9 @@ const hoodies = (props) => {
                         stroke="black"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
                           d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                         />
                       </svg>
@@ -125,7 +125,7 @@ const hoodies = (props) => {
                       <div className="flex flex-row space-x-1">
                         {
                           product.color.map((c)=>{
-                            return <BsCircleFill color={c}/>
+                            return <BsCircleFill color={c} key={c}/>
                           })
                         }
                       </div>
@@ -139,9 +139,9 @@ const hoodies = (props) => {
                         stroke="gray"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                         />
                       </svg>
@@ -165,29 +165,29 @@ const hoodies = (props) => {
           <div className='SIZE'>
           <div className='font-semibold text-lg'>Size:</div>
           <div className='ml-3 mt-1'>
-          <div class="flex items-center mb-2 ">
-              <input id="size-S" onChange={()=>{checkBoxMethod(filter.size,"S")}} type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-              <label for="size-S" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">S</label>
+          <div className="flex items-center mb-2 ">
+              <input id="size-S" onChange={()=>{checkBoxMethod(filter.size,"S")}} type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              <label htmlFor="size-S" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">S</label>
           </div>
-          <div class="flex items-center mb-2">
-              <input id="size-M" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"M")}} value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-              <label for="size-M" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">M</label>
+          <div className="flex items-center mb-2">
+              <input id="size-M" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"M")}} value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              <label htmlFor="size-M" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">M</label>
           </div>
-          <div class="flex items-center mb-2">
-              <input id="size-L" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"L")}} value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-              <label for="size-L" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">L</label>
+          <div className="flex items-center mb-2">
+              <input id="size-L" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"L")}} value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              <label htmlFor="size-L" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">L</label>
           </div>
-          <div class="flex items-center mb-2">
-              <input id="size-XL" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"XL")}} value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-              <label for="size-XL" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">XL</label>
+          <div className="flex items-center mb-2">
+              <input id="size-XL" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"XL")}} value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              <label htmlFor="size-XL" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">XL</label>
           </div>
-          <div class="flex items-center mb-2">
-              <input id="size-XXL" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"XXL")}} value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-              <label for="size-XXL" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">XXL</label>
+          <div className="flex items-center mb-2">
+              <input id="size-XXL" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"XXL")}} value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              <label htmlFor="size-XXL" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">XXL</label>
           </div>
-          <div class="flex items-center mb-2">
-              <input id="size-XXXL" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"XXXL")}} value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-              <label for="size-XXXL" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">XXXL</label>
+          <div className="flex items-center mb-2">
+              <input id="size-XXXL" type="checkbox" onChange={()=>{checkBoxMethod(filter.size,"XXXL")}} value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              <label htmlFor="size-XXXL" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">XXXL</label>
           </div>
 
           </div>
@@ -199,9 +199,9 @@ const hoodies = (props) => {
           <div className='ml-3 mt-1'>
             {
               allBrands.map((brand)=>{
-                return <div class="flex items-center mb-2" >
-                <input id={brand} type="checkbox" onChange={()=>{checkBoxMethod(filter.brand,brand)}} value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                <label for={brand} class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{brand}</label>
+                return <div className="flex items-center mb-2" key={brand}>
+                <input id={brand} type="checkbox" onChange={()=>{checkBoxMethod(filter.brand,brand)}} value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                <label htmlFor={brand} className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{brand}</label>
             </div>
               })
               
@@ -213,15 +213,15 @@ const hoodies = (props) => {
           <div className='PRICE'>
           <div className='font-semibold text-lg'>PRICE:</div>
           <div className='ml-3 mt-1 space-x-2'>
-          <input id="min" type="text" placeholder='MIN' class="w-14 border p-1 border-black  bg-gray-100 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-          <input id="max" type="text"  placeholder='MAX' class="w-14 border p-1 border-black bg-gray-100 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+          <input id="min" type="text" placeholder='MIN' className="w-14 border p-1 border-black  bg-gray-100 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+          <input id="max" type="text"  placeholder='MAX' className="w-14 border p-1 border-black bg-gray-100 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
           </div>
           </div>
 
           <button
                 type="button"
                 onClick={applyFilter}
-                class=" text-white mt-4 bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className=" text-white mt-4 bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Apply
               </button>
@@ -244,4 +244,4 @@ export async function getServerSideProps(context){
     };
 }
 
-export default hoodies;
+export default Hoodies;

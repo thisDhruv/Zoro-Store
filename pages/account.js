@@ -4,7 +4,7 @@ import {RxCross2} from 'react-icons/rx';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
-const account = () => {
+const Account = () => {
   const[email,setEmail]=useState('');
   const[phone,setPhone]=useState('');
   const[phoneAd,setPhoneAd] = useState('');
@@ -248,10 +248,10 @@ const account = () => {
     <div className="text-xl font-bold flex flex-row content-center">
         1. Your Details <div onClick={()=>{setDetailsEditMode(!detailsEditMode)}} className="ml-4 hover:bg-slate-300 : rounded-full p-1"><MdModeEditOutline size={20} /></div>
     </div>
-    <div class="mb-6">
+    <div className="mb-6">
               <label
-                for="email"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Email
               </label>
@@ -262,15 +262,15 @@ const account = () => {
                 name="email"
                 disabled={true}
                 onChange={handleChange}
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder=""
                 required
               />
             </div>
-              <div class="mb-6 flex-1">
+              <div className="mb-6 flex-1">
                 <label
-                  for="name"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="name"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Name
                 </label>
@@ -282,14 +282,14 @@ const account = () => {
                 disabled={!detailsEditMode}
 
                   onChange={handleChange}
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
-              <div class="mb-6">
+              <div className="mb-6">
               <label
-                for="phone"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="phone"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Phone
               </label>
@@ -300,7 +300,7 @@ const account = () => {
                 value={phone}
                 disabled={!detailsEditMode}
                 onChange={handleChange}
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required
               />
             </div>
@@ -308,7 +308,7 @@ const account = () => {
             detailsEditMode && <button
             type="button"
             onClick={savePersonalDetails}
-            class="text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             
             Submit
@@ -322,10 +322,10 @@ const account = () => {
         <div className='text-xl font-semibold flex flex-row content-center'>Change Password: 
         <div onClick={()=>{setPasswordChangeMode(!passwordChangeMode)}} className="ml-4 hover:bg-slate-300 : rounded-full p-1"><MdModeEditOutline size={20} /></div>
         </div>
-        <div class="mb-6 flex-1">
+        <div className="mb-6 flex-1">
                 <label
-                  for="currPass"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="currPass"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Current Password
                 </label>
@@ -336,14 +336,14 @@ const account = () => {
                   name="currPass"
                   disabled={!passwordChangeMode}
                   onChange={handleChange}
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
-              <div class="mb-6 flex-1">
+              <div className="mb-6 flex-1">
                 <label
-                  for="newPass"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="newPass"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   New Password
                 </label>
@@ -354,14 +354,14 @@ const account = () => {
                   name="newPass"
                   disabled={!passwordChangeMode}
                   onChange={handleChange}
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
-              <div class="mb-6 flex-1">
+              <div className="mb-6 flex-1">
                 <label
-                  for="newPass2"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="newPass2"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   New Password (Enter Again)
                 </label>
@@ -372,7 +372,7 @@ const account = () => {
                   name="newPass2"
                   disabled={!passwordChangeMode}
                   onChange={handleChange}
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
@@ -380,7 +380,7 @@ const account = () => {
             passwordChangeMode && <button
             type="button"
             onClick={updatePassword}
-            class="text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             
             Submit
@@ -405,7 +405,7 @@ const account = () => {
     </div>
     {
         addresses.map((address)=>{
-            return <div onClick={()=>{addressModalSet(address.id); setAddressModal(true) }} className='bg-slate-100 relative md:text-base text-xs hover:bg-slate-300 cursor-pointer border border-stone-600 rounded-md p-1'>
+            return <div key={address.id} onClick={()=>{addressModalSet(address.id); setAddressModal(true) }} className='bg-slate-100 relative md:text-base text-xs hover:bg-slate-300 cursor-pointer border border-stone-600 rounded-md p-1'>
             <span className='font-bold'>{address.name}</span>
             <div>Phone: {address.phone}</div>
             <p>{address.address}</p>
@@ -424,10 +424,10 @@ const account = () => {
         <RxCross2 className={'text-3xl absolute right-1 top-1 cursor-pointer hover:text-zinc-600' } onClick={()=>{setAddressModal(false)}}/>
     <form>
     <div className="flex flex-row ">
-          <div class="mb-6 md:mr-6 flex-1">
+          <div className="mb-6 md:mr-6 flex-1">
             <label
-              for="nameAd"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              htmlFor="nameAd"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Name
             </label>
@@ -437,14 +437,14 @@ const account = () => {
               value={nameAd}
               name="nameAd"
               onChange={handleChange}
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
           <label
-            for="phoneAd"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            htmlFor="phoneAd"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Phone
           </label>
@@ -454,16 +454,16 @@ const account = () => {
             name="phoneAd"
             value={phoneAd}
             onChange={handleChange}
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             required
           />
         </div>
         </div>
 
-        <div class="mb-6">
+        <div className="mb-6">
           <label
-            for="address"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            htmlFor="address"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Address
           </label>
@@ -474,16 +474,16 @@ const account = () => {
             value={address}
             onChange={handleChange}
             rows="4"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             required
           ></textarea>
         </div>
 
         <div className="flex flex-row ">
-          <div class="mb-6 md:mr-6 flex-1">
+          <div className="mb-6 md:mr-6 flex-1">
             <label
-              for="city"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              htmlFor="city"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               City
             </label>
@@ -493,14 +493,14 @@ const account = () => {
               name="city"
               value={city}
               onChange={handleChange}
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
           </div>
-          <div class="mb-6 md:mr-6 flex-1">
+          <div className="mb-6 md:mr-6 flex-1">
             <label
-              for="state"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              htmlFor="state"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               State
             </label>
@@ -510,14 +510,14 @@ const account = () => {
               value={state}
               name="state"
               onChange={handleChange}
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
           </div>
-          <div class="mb-6 flex-1">
+          <div className="mb-6 flex-1">
             <label
-              for="pincode"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              htmlFor="pincode"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               PIN Code
             </label>
@@ -527,7 +527,7 @@ const account = () => {
               id="pincode"
               name="pincode"
               value={pincode}
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
           </div>
@@ -536,7 +536,7 @@ const account = () => {
         <button
             type="submit"
             onClick={saveAddressDetails}
-            class="mt-1 text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="mt-1 text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             
             Save
@@ -567,4 +567,4 @@ const account = () => {
   )
 }
 
-export default account
+export default Account

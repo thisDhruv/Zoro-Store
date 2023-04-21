@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
 
-const checkout = (props) => {
+const Checkout = (props) => {
   const cart = props.cart;
   const subtotal = props.subtotal;
   const addToCart = props.addToCart;
@@ -192,7 +192,7 @@ useEffect(() => {
              <div className="flex flex-row space-x-2 overflow-auto">
              {
               addresses.map((address)=>{
-                return  <div onClick={()=>{setAllDetails(address.id)}} className="font-semibold rounded-lg  text-center border p-1 md:px-2 hover:bg-slate-200 cursor-pointer border-neutral-900 ">
+                return  <div key={address.id} onClick={()=>{setAllDetails(address.id)}} className="font-semibold rounded-lg  text-center border p-1 md:px-2 hover:bg-slate-200 cursor-pointer border-neutral-900 ">
                  {address.name}
               </div>
               })
@@ -205,10 +205,10 @@ useEffect(() => {
 
             </div>
             }
-            <div class="mb-6">
+            <div className="mb-6">
               <label
-                for="email"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Email
               </label>
@@ -219,7 +219,7 @@ useEffect(() => {
                 name="email"
                 disabled={props.user}
                 onChange={handleChange}
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder=""
                 required
               />
@@ -227,10 +227,10 @@ useEffect(() => {
 
 
             <div className="flex flex-row ">
-              <div class="mb-6 mr-6 flex-1">
+              <div className="mb-6 mr-6 flex-1">
                 <label
-                  for="name"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="name"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Name
                 </label>
@@ -240,14 +240,14 @@ useEffect(() => {
                   value={name}
                   name="name"
                   onChange={handleChange}
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
-              <div class="mb-6">
+              <div className="mb-6">
               <label
-                for="phone"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="phone"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Phone
               </label>
@@ -257,16 +257,16 @@ useEffect(() => {
                 name="phone"
                 value={phone}
                 onChange={handleChange}
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required
               />
             </div>
             </div>
 
-            <div class="mb-6">
+            <div className="mb-6">
               <label
-                for="address"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="address"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Address
               </label>
@@ -277,16 +277,16 @@ useEffect(() => {
                 value={address}
                 onChange={handleChange}
                 rows="4"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required
               ></textarea>
             </div>
 
             <div className="flex flex-row ">
-              <div class="mb-6 mr-6 flex-1">
+              <div className="mb-6 mr-6 flex-1">
                 <label
-                  for="city"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="city"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   City
                 </label>
@@ -296,14 +296,14 @@ useEffect(() => {
                   name="city"
                   value={city}
                   onChange={handleChange}
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
-              <div class="mb-6 mr-6 flex-1">
+              <div className="mb-6 mr-6 flex-1">
                 <label
-                  for="state"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="state"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   State
                 </label>
@@ -313,14 +313,14 @@ useEffect(() => {
                   value={state}
                   name="state"
                   onChange={handleChange}
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
-              <div class="mb-6 flex-1">
+              <div className="mb-6 flex-1">
                 <label
-                  for="pincode"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="pincode"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   PIN Code
                 </label>
@@ -330,7 +330,7 @@ useEffect(() => {
                   id="pincode"
                   name="pincode"
                   value={pincode}
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
@@ -341,8 +341,9 @@ useEffect(() => {
           <div className="m-2 text-xl font-bold">2. Review Cart Items & Pay </div>
             <div className=" text-center m-auto mt-10 space-y-1 overflow-auto">
               {Object.keys(cart).map((key) => {
-                return (<>
-                  <div className="tableRow flex md:mx-3 flex-row rounded-xl p-1 ">
+                return (
+                  <div key={key}>
+                  <div className="tableRow flex md:mx-3 flex-row rounded-xl p-1"  >
                             <div className='w-9 h-full mx-1'><img src={cart[key].img} alt="productImage" /></div>
                         <div className="pname w-1/2 font-bold overflow-ellipsis overflow-x-clip text-xs m-auto">{cart[key].name} ({cart[key].color} / {cart[key].size})</div>
                         <div className="quantity flex flex-row font-bold my-auto">
@@ -353,8 +354,9 @@ useEffect(() => {
                         <div className="price font-bold text-center overflow-x-auto text-xs m-auto">₹{cart[key].price}</div>
                         
                     </div>
-                    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
-                    </>
+                    <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"/>
+                    </div>
+
                 );
               })}
             </div>
@@ -365,11 +367,11 @@ useEffect(() => {
               <button
                 type="submit"
                 onClick={checkoutHandler}
-                class="right-0 text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="right-0 text-white  bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 <svg
                   aria-hidden="true"
-                  class="w-5 h-5 mr-2 -ml-1"
+                  className="w-5 h-5 mr-2 -ml-1"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -401,4 +403,4 @@ useEffect(() => {
   );
 };
 
-export default checkout;
+export default Checkout;
