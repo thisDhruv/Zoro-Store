@@ -60,7 +60,6 @@ export async function getServerSideProps(context){
   console.log(context.query.oid);
   let order = await Order.findOne({orderId:context.query.oid});
 
-
   return {
     props: { order:JSON.parse(JSON.stringify(order))},
   };
